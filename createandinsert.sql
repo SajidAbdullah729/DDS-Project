@@ -1,0 +1,64 @@
+
+set linesize 150;
+set serveroutput on;
+set verify off;
+drop table DoctorList;
+drop table appointment;
+drop table doctorlist;
+CREATE TABLE doctorlistone
+( doctor_id number(10) NOT NULL,
+  doctor_name varchar2(50) NOT NULL,
+  speciality varchar2(50),
+  degree varchar2(50)
+);
+
+insert into DoctorListone values(37,'Dr.Barek','Surgery','FCPS');
+insert into DoctorListone values(38,'Dr.Salam','Surgery','MBBS,BCS');
+insert into DoctorListone values(39,'Dr.Rafiq','Heart','FCPS');
+insert into DoctorListone values(40,'Dr.Harun','Heart','FCPS');
+insert into DoctorListone values(45,'Dr.Reza','Surgery','FCPS');
+insert into DoctorListone values(35,'Dr.Rafiul Alam','Medicine','FCPS');
+insert into DoctorListone values(36,'Dr.Rashik','Medicine','FCPS');
+
+
+
+Update DoctorListone set speciality = 'Medicine' where doctor_id=37;
+Update DoctorListone set speciality = 'Medicine' where doctor_id=38;
+Update DoctorListone set speciality = 'Medicine' where doctor_id=39;
+Update DoctorListone set speciality = 'Medicine' where doctor_id=40;
+Update DoctorListone set speciality = 'Medicine' where doctor_id=45;
+
+DROP TABLE APPOINTMENTONE;
+CREATE TABLE Appointmentone( appointment_id number(10) NOT NULL,doctor_id number(10), patient_name varchar2(50),patient_age number(10),patient_contact varchar2(50));
+
+
+insert into Appointmentone values (10,6,'Rakib',20,'01727287889');
+
+insert into Appointmentone values (6,6,'Sakib',22,'01827287119');
+insert into Appointmentone values (7,6,'Mahir',20,'01727287810');
+
+insert into Appointmentone values (8,6,'Jaber',22,'01322287119');
+
+insert into Appointmentone values (9,9,'Hakim',22,'01922287119');
+
+insert into Appointmentone values (35,37,'Rakib',20,'01727287889');
+insert into Appointmentone values (36,38,'Sakib',20,'01727287889');
+insert into Appointmentone values (37,39,'Mahir',20,'01727287889');
+insert into Appointmentone values (38,35,'Jaber',20,'01727287889');
+insert into Appointmentone values (39,36,'Hakim',20,'01727287889');
+
+insert into Appointmenttwo values (35,37,500,'01-JAN-23');
+insert into Appointmenttwo values (36,38,500,'02-FEB-23');
+insert into Appointmenttwo values (37,39,500,'03-FEB-23');
+insert into Appointmenttwo values (38,35,500,'04-FEB-23');
+insert into Appointmenttwo values (39,36,500,'05-FEB-23');
+
+
+
+ALTER TABLE appointmentone modify  doctor_id number(10) not null;
+
+ALTER TABLE appointmenttwo modify  doctor_id number(10) not null;
+
+
+
+

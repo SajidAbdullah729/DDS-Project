@@ -1,0 +1,12 @@
+set serveroutput on;
+set verify off;
+DROP VIEW PATIENT_WITH_TOTAL_APPOINTMENT;
+
+
+SELECT * FROM DOCTOR_WITH_TOTAL_APPOINTMENT;
+
+CREATE VIEW PATIENT_WITH_TOTAL_APPOINTMENT AS
+select patient_name,count(*) as "Total Doctor" from appointmentone group by patient_name ;
+
+SELECT * FROM PATIENT_WITH_TOTAL_APPOINTMENT;
+commit;
