@@ -1,5 +1,5 @@
 
-set linesize 150;
+set linesize 200;
 set serveroutput on;
 set verify off;
 drop table DoctorList;
